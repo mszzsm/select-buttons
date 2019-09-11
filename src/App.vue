@@ -1,18 +1,31 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+   
+    <SelectButtons msg="Welcome to Your Vue sanbox" :answers='answers'/>
+   
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import SelectButtons from './components/SelectButtons.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
-  }
+    SelectButtons
+  },
+  data: function () {
+    return {
+       answers: {'answer1' : false,
+                  'answer2' : false, 
+                  'answer3' : false, 
+                  'answer4' : false, 
+                  'answer2' : false}
+    }
+  },
+     
+
+  
 }
 </script>
 
