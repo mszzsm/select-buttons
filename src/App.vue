@@ -14,6 +14,7 @@ export default {
   components: {
     SelectButtons
   },
+
   data: function () {
     return {
        answers: {'answer1' : false,

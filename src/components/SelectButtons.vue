@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <div   ref="test" v-for="(answer, i) in Object.keys(this.$props.answers)">
+    <div   ref="test" :key="i" v-for="(answer, i) in Object.keys(this.$props.answers)">
       <button class="btn"
           :class="[isActive[i] ? 'active' : '']"
           @click="setActive(answer)"
@@ -10,10 +10,10 @@
           > {{answer}} 
       </button>
     </div>
-
-    <h1>{{isActive}}</h1>
-    <h1>{{indexesOfTrue}}</h1>
-    <h1>{{valuesOfTrue}}</h1>
+    <h1> Computed Properties </h1>
+    <h2>{{isActive}}</h2>
+    <h2>{{indexesOfTrue}}</h2>
+    <h2>{{valuesOfTrue}}</h2>
   </div>
 </template>
 
@@ -23,13 +23,11 @@ export default {
   props: {
     msg: String,
     answers: Object
-
   },
 
   methods: {
     setActive: function(e){
       this.$props.answers[e] = !this.$props.answers[e]
-      return console.log(this.$props.answers[e])
     },
   },
 
@@ -48,7 +46,6 @@ export default {
 
     valuesOfTrue: function(){
       let arr = this.$props.answers
-      let val = true 
       var result = {};
       for (var key in arr) {
           if (arr[key] === true) {
@@ -58,9 +55,6 @@ export default {
       return result
     },
   }
-
-
-  
 }
 </script>
 
