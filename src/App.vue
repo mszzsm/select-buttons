@@ -24,9 +24,6 @@ export default {
                   'answer2' : false}
     }
   },
-     
-
-  
 }
 </script>
 
